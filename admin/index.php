@@ -1,5 +1,36 @@
+<?php 
+session_start();
+
+include_once 'controll/database.php';
+include_once 'controll/status_session.php';
+
+$email = $_SESSION['email'];
+$_SESSION['namalkp'];
+
+
+
+
+
+
+?>
+
+ <?php
+
+require 'controll/database.php';
+
+ 
+  $sql = $koneksi->query("SELECT * FROM admin_kfi ");
+ while ($tampil=$sql->fetch_assoc()) {
+  $a=$sql->num_rows;
+
+   # code...
+ }
+?><!-- Content 
+
+
+
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!-[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
@@ -73,15 +104,15 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="index.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">DATA KFI</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Data Akun</a>
                         <ul class="sub-menu children dropdown-menu">                           
-                         <li><i class="fa fa-key"></i><a href="ui-buttons.html">Akun Admin</a></li>
-                            <li><i class="fa fa-user"></i><a href="ui-badges.html">Akun User</a></li>
-                             <li><i class="fa fa-wrench"></i><a href="ui-badges.html">Super Admin</a></li>
+                         <li><i class="fa fa-key"></i><a href="akunadmin.php">Akun Admin</a></li>
+                            <li><i class="fa fa-user"></i><a href="akunuser.php">Akun User</a></li>
+                             <li><i class="fa fa-wrench"></i><a href="tambahadmin.php">Super Admin</a></li>
                       
                         </ul>
                     </li>
@@ -89,7 +120,7 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>DATA MEMBER KFI</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon ti-id-badge"></i><a href="forms-basic.html">Tabel Member</a></li>
+                            <li><i class="menu-icon ti-id-badge"></i><a href="datamember.php">Tabel Member</a></li>
                            
                         </ul>
                     </li>
@@ -99,7 +130,7 @@
                  
                    
                     <li class>
-                        <a href="setting/logout.php"><i class="menu-icon fa fa-sign-out"></i>KELUAR </a>
+                        <a href="controll/logout.php"><i class="menu-icon fa fa-sign-out"></i>KELUAR </a>
                     </li>
                   
                   
@@ -122,6 +153,8 @@
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
+                        <i class="fa fa-user  ">&nbsp; <?php echo " ".$_SESSION['email']. "<br>"; ?> </i>
+                       
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
                             <form class="search-form">
@@ -150,6 +183,28 @@
                 </div>
             </div>
         </header>
+
+
+         <?php
+ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+require 'controll/database.php';
+
+
+
+   $sql = $koneksi->query("SELECT * FROM akun_kfi");
+ while ($tampil=$sql->fetch_assoc()) {
+  $b=$sql->num_rows;
+
+   # code...
+ }
+  $sql = $koneksi->query("SELECT * FROM data_kfi ");
+ while ($tampil=$sql->fetch_assoc()) {
+  $c=$sql->num_rows;
+
+   # code...
+  # code...
+ }
+?><!-- Content -->
         <!-- /#header -->
         <!-- Content -->
         <div class="content">
@@ -166,7 +221,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">23569</span></div>
+                                            <div class="stat-text"><span class="count"><?php echo $a; ?></span></div>
                                             <div class="stat-heading">Akun Admin</div>
                                         </div>
                                     </div>
@@ -184,7 +239,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">3435</span></div>
+                                            <div class="stat-text"><span class="count"><?php echo $b; ?></span></div>
                                             <div class="stat-heading">Akun User</div>
                                         </div>
                                     </div>
@@ -193,23 +248,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="stat-widget-five">
-                                    <div class="stat-icon dib flat-color-3">
-                                        <i class="ti-key"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">349</span></div>
-                                            <div class="stat-heading">Super Admin</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
@@ -220,8 +259,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
-                                            <div class="stat-heading">Data Member</div>
+                                            <div class="stat-text"><span class="count"><?php echo $c; ?></span></div>
+                                            <div class="stat-heading">DataMember</div>
                                         </div>
                                     </div>
                                 </div>
@@ -248,28 +287,22 @@
                                     <div class="card-body">
                                         <div class="progress-box progress-1">
                                             <h4 class="por-title">Akun Admin</h4>
-                                            <div class="por-txt">96,930  (40%)</div>
+                                            <div class="por-txt"><?php echo $a; ?>  (50%)</div>
                                             <div class="progress mb-2" style="height: 5px;">
-                                                <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 40%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-flat-color-1" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                         <div class="progress-box progress-2">
                                             <h4 class="por-title">Akun User</h4>
-                                            <div class="por-txt">3,220  (24%)</div>
+                                            <div class="por-txt"><?php echo $b; ?>  (50%)</div>
                                             <div class="progress mb-2" style="height: 5px;">
-                                                <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 24%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-flat-color-2" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                        <div class="progress-box progress-2">
-                                            <h4 class="por-title">Super Admin</h4>
-                                            <div class="por-txt">29,658 s (60%)</div>
-                                            <div class="progress mb-2" style="height: 5px;">
-                                                <div class="progress-bar bg-flat-color-3" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="progress-box progress-2">
                                             <h4 class="por-title">Data Member</h4>
-                                            <div class="por-txt">99,658  (90%)</div>
+                                            <div class="por-txt"><?php echo $c; ?>  (50%)</div>
                                             <div class="progress mb-2" style="height: 5px;">
                                                 <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
@@ -293,59 +326,10 @@
 
                 <!-- /Calender Chart Weather -->
                 <!-- Modal - Calendar - Add New Event -->
-                <div class="modal fade none-border" id="event-modal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title"><strong>Add New Event</strong></h4>
-                            </div>
-                            <div class="modal-body"></div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+             
                 <!-- /#event-modal -->
                 <!-- Modal - Calendar - Add Category -->
-                <div class="modal fade none-border" id="add-category">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title"><strong>Add a category </strong></h4>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label class="control-label">Category Name</label>
-                                            <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name"/>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="control-label">Choose Category Color</label>
-                                            <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                                <option value="success">Success</option>
-                                                <option value="danger">Danger</option>
-                                                <option value="info">Info</option>
-                                                <option value="pink">Pink</option>
-                                                <option value="primary">Primary</option>
-                                                <option value="warning">Warning</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        
             <!-- /#add-category -->
             </div>
             <!-- .animated -->
@@ -357,7 +341,7 @@
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        Copyright &copy; 2018 KFI
+                        Copyright &copy; 2019 KFI - Komunitas Foodpreneur
                     </div>
                     <div class="col-sm-6 text-right">
                         Designed by <a href="https://aji.com">aji</a>
