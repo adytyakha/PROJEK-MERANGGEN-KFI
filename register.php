@@ -44,12 +44,12 @@
                            
                            <div class="form-group">
                             <label>Nama Lengkap</label>
-                            <input id="namalkp" name="namalkp" type="namalkp" class="form-control col-sm-8" placeholder="Nama Lengkap">
+                            <input id="namalkp" name="namalkp" type="namalkp" class="form-control col-sm-8" placeholder="Nama Lengkap" required>
                         </div>
                      
                         <div class="form-group">
                             <label>Email</label>
-                            <input id="email" name="email" type="email" class="form-control col-sm-12" placeholder="Email" >
+                            <input id="email" name="email" type="email" class="form-control col-sm-12" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>

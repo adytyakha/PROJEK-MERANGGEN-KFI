@@ -91,21 +91,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Nama Lengkap</label>
         <div class="col-sm-10">
-          <input type="namalengkap" id="namalengkap" name="namalengkap" class="form-control"  placeholder="Nama Lengkap">
+          <input type="namalengkap" id="namalengkap" name="namalengkap" class="form-control"  placeholder="Nama Lengkap" required>
         </div>
       </div>
 
            <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Jenis Usaha</label>
         <div class="col-sm-10">
-          <input id="jenisusaha" name="jenisusaha" type="jenisusaha" class="form-control"  placeholder="Jenis Usaha">
+          <input id="jenisusaha" name="jenisusaha" type="jenisusaha" class="form-control"  placeholder="Jenis Usaha" required>
         </div>
       </div>
 
            <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Sosial Media</label>
         <div class="col-sm-10">
-          <input id="sosialmedia" name="sosialmedia" type="sosialmedia" class="form-control"  placeholder="Sosial Media">
+          <input id="sosialmedia" name="sosialmedia" type="sosialmedia" class="form-control"  placeholder="Sosial Media" required>
           <label >  &nbsp; Example :Instagram, Fb, Twitter, dll </label>
         </div>
       </div>
@@ -114,14 +114,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Alamat</label>
         <div class="col-sm-10">
-          <input id="alamat" type="alamat" name="alamat" class="form-control"  placeholder="Alamat">
+          <input id="alamat" type="alamat" name="alamat" class="form-control"  placeholder="Alamat" required>
         </div>
       </div>
 
             <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Kota/Kab</label>
         <div class="col-sm-10">
-          <input id="kotakab" name="kotakab" type="kotakab" class="form-control" id="inputEmail3" placeholder="Kota/Kab">
+          <input id="kotakab" name="kotakab" type="kotakab" class="form-control" id="inputEmail3" placeholder="Kota/Kab" required>
         </div>
       </div>
 
@@ -129,14 +129,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Provinsi</label>
         <div class="col-sm-10">
-          <input id="provinsi" name="provinsi" type="provinsi" class="form-control"  placeholder="Provinsi">
+          <input id="provinsi" name="provinsi" type="provinsi" class="form-control"  placeholder="Provinsi" required>
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Hp</label>
         <div class="col-sm-10">
-          <input id="hp" name="hp" type="hp" class="form-control"  placeholder="Hp">
+          <input id="hp" name="hp" type="hp" class="form-control"  placeholder="Hp" required>
         </div>
       </div>
 
