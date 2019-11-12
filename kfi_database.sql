@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2019 at 04:23 PM
+-- Generation Time: Nov 12, 2019 at 04:20 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -32,16 +32,16 @@ CREATE TABLE `admin_kfi` (
   `id_admin` int(11) NOT NULL,
   `namalkp` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `level` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin_kfi`
 --
 
-INSERT INTO `admin_kfi` (`id_admin`, `namalkp`, `email`, `password`) VALUES
-(2, 'adytya', 'adytyanbg321@gmail.com', '21232f297a57a5a743894a0e4a801fc3'),
-(9, 'didit', 'didit@gmail.com', 'b54158bd2d60aa56125ff181a32fb1d0');
+INSERT INTO `admin_kfi` (`id_admin`, `namalkp`, `email`, `password`, `level`) VALUES
+(9, 'didit', 'didit@gmail.com', 'b54158bd2d60aa56125ff181a32fb1d0', 'admin');
 
 -- --------------------------------------------------------
 
@@ -53,17 +53,16 @@ CREATE TABLE `akun_kfi` (
   `id` int(11) NOT NULL,
   `namalkp` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `level` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `akun_kfi`
 --
 
-INSERT INTO `akun_kfi` (`id`, `namalkp`, `email`, `password`) VALUES
-(1, 'adytya', 'a@wertty', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
-(3, 'Hadi Yadi', 'hadi@gmail.com', '76671d4b83f6e6f953ea2dfb75ded921'),
-(14, '111', '11@gmail.com', '6512bd43d9caa6e02c990b0a82652dca');
+INSERT INTO `akun_kfi` (`id`, `namalkp`, `email`, `password`, `level`) VALUES
+(3, 'Hadi Yadi', 'hadi@gmail.com', '76671d4b83f6e6f953ea2dfb75ded921', 'user');
 
 -- --------------------------------------------------------
 
@@ -120,19 +119,19 @@ ALTER TABLE `data_kfi`
 -- AUTO_INCREMENT for table `admin_kfi`
 --
 ALTER TABLE `admin_kfi`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `akun_kfi`
 --
 ALTER TABLE `akun_kfi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `data_kfi`
 --
 ALTER TABLE `data_kfi`
-  MODIFY `id_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_data` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
