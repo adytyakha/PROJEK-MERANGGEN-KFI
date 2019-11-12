@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 include_once '../admin/controll/database.php';
 
 
@@ -7,6 +7,8 @@ include_once '../admin/controll/database.php';
 $namalkp    = $_POST['namalkp'];
 $email  = $_POST['email'];
 $password = $_POST['password'];
+$level = $_POST['level'];
+
 
 
 
@@ -35,7 +37,7 @@ $password = $_POST['password'];
         // $sql = "INSERT INTO `member`(`nama_lengkap`, `alamat`,`username`, `password`, `asal_sekolah`, `hp`, `tglahir`, `agama`, `email`) 
         // VALUES ('$nama_lengkap','$alamat','$username','$password','$asal_sekolah','$hp','$tglahir','$agama','$email')";
         // $query = mysqli_query($link, $sql);
-       $sql = "INSERT INTO `akun_kfi`(`id`, `namalkp`, `email`,  `password`) VALUES (NULL, '$namalkp', '$email', MD5('$password'))";
+       $sql = "INSERT INTO `akun_kfi`(`id`, `namalkp`, `email`,  `password`, `level`) VALUES (NULL, '$namalkp', '$email', MD5('$password'), 'user')";
  $query = mysqli_query($koneksi, $sql);
         // apakah query simpan berhasil?
         if ($query) {

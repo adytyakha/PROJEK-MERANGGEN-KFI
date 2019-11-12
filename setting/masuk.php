@@ -12,6 +12,7 @@
     $password = $data['password'];
         $id = $data['id'];
     $namalkp   = $data['namalkp'];
+       $level   = $data['level'];
   
    
      
@@ -22,6 +23,8 @@
   
       $_SESSION['email'] =$email;
       $_SESSION['namalkp'] =$namalkp;
+      $_SESSION['level'] =$level;
+
  
 
     

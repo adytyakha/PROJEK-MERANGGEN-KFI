@@ -13,6 +13,7 @@
         $id_admin = $data['id_admin'];
    
     $namalkp   = $data['namalkp'];
+        $level   = $data['level'];
   
    
      
@@ -23,6 +24,7 @@
     
       $_SESSION['email'] =$email;
       $_SESSION['namalkp'] =$namalkp;
+          $_SESSION['level'] =$level;
  
 
     

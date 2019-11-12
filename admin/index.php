@@ -1,11 +1,13 @@
 <?php 
 session_start();
-
+error_reporting(0);
 include_once 'controll/database.php';
 include_once 'controll/status_session.php';
+include_once 'controll/cek.php';
 
-$email = $_SESSION['email'];
-$_SESSION['namalkp'];
+
+
+
 
 
 
@@ -13,6 +15,15 @@ $_SESSION['namalkp'];
 
 
 ?>
+
+
+
+
+
+
+
+
+
 
  <?php
 

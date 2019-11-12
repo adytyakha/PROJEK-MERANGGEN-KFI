@@ -1,11 +1,11 @@
 <?php
 session_start();
-if (isset($_SESSION["email"]))
+if (isset($_SESSION["level"]))
 {
-	unset($_SESSION['email']);
+	unset($_SESSION['level']);
 ?>
 	<script language="javascript">
-	document.location="../index.php";
+	document.location="../login.php";
 	</script>
 <?php 
 	

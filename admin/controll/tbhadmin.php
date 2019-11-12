@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include("database.php");
 // session_start();
 // $session_id = $_SESSION['id'];
@@ -10,6 +11,7 @@ if($_POST){
       	$namalkp = $_POST['namalkp'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+           $level = $_POST['level'];
 
         
         $cek = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM admin_kfi WHERE email='$email'"));
@@ -22,7 +24,7 @@ if($_POST){
         // $sql = "INSERT INTO `member`(`nama_lengkap`, `alamat`,`username`, `password`, `asal_sekolah`, `hp`, `tglahir`, `agama`, `email`) 
         // VALUES ('$nama_lengkap','$alamat','$username','$password','$asal_sekolah','$hp','$tglahir','$agama','$email')";
         // $query = mysqli_query($link, $sql);
-       $sql = "INSERT INTO `admin_kfi`( `namalkp`, `email`, `password`) VALUES ( '$namalkp', '$email', '$password')";
+       $sql = "INSERT INTO `admin_kfi`( `namalkp`, `email`, `password`, `level`) VALUES ( '$namalkp', '$email', MD5('$password'), 'admin')";
  $query = mysqli_query($koneksi, $sql);
         // apakah query simpan berhasil?
         if ($query) {
